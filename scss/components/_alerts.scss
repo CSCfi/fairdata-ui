@@ -1,0 +1,12 @@
+.fd-alert {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 15px 25px;
+
+    @each $color, $value in $fd-colors {
+        &.fd-#{$color} {
+          @include alert-variant($color);
+        }
+    }
+}

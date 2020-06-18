@@ -1,0 +1,11 @@
+.fd-content {
+    width: 90%;
+    max-width: 950px;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    flex: 1 0 auto;
+
+    @media screen and (max-width: #{map-get($grid-breakpoints, "sm")}) {
+        margin-top: 15px;
+    }
+}

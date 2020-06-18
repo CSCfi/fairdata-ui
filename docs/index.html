@@ -1,0 +1,265 @@
+<html>
+    <head>
+        <link rel="icon" href="assets/favico.ico">
+        <link href="fairdata.css" rel="stylesheet">
+        <link rel="stylesheet"
+            href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>
+        <title>Documentation for Fairdata UI components and guidelines</title>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+    <body>
+        <div class="root">
+            <div class="fd-header container-fluid">
+                <div class="row no-gutter">
+                    <div class="col-md-10 col-sm-10 col-10">
+                        <img src="assets/fairdata-logo.svg" alt="Fairdata logo" class="logo">
+                    </div>
+                </div>
+            </div>
+            <div class="fd-content container">
+                <h1>Fairdata UI components and style guidelines</h1>
+                <hr />
+                <p>This document defines components and style guides to be used in Fairdata services.</p>
+                <p>This component library is not tested together with any other common UI framework. Styles should not be colliding, but make sure that everything works properly if include some other stylings.</p>
+                <p>Components are written in <a href="https://sass-lang.com/">SCSS</a>. This project includes the <a href="https://getbootstrap.com/docs/4.0/layout/grid/">Bootstrap gird system</a>, no other external styles or JavaScript are involved in this project.
+                As there is no jQuery or other Javascript involved in the components, any interactions, for example dismissable alerts needs to be implemented in the project utilizing the components.</p>
+                <a class="title" name="usage" href="#usage"><h2>Usage</h2></a>
+                <hr />
+                <p>To use predefined components, import builded css file and add required classes to your components. See available components bellow.</p>
+                <a class="title" name="usage-html" href="#usage-html"><h3>Plain HTML</h3></a>
+                <p>
+                    Add contents of <code>dist/</code> folder to root of your web server and add following inside <code>head</code> tag:
+                    <pre><code lang="html">
+        &lt;link href="/css/fairdata.css" rel="stylesheet"&gt;
+                    </code></pre>
+                    <div class="fd-alert fd-primary">CSS blob can be served from other directory as well, fonts are expected to be in <code>fonts/</code> subfolder, in same level to <code>fairdata.css</code>.</div>
+                </p>
+                <a class="title" name="usage-react" href="#usage-react"><h3>React</h3></a>
+                <p>
+                    Add fairdata ui as dependency:
+                    <pre><code>
+    npm install TODO --save
+                    </code></pre>
+                    Import styles in your root component:
+                    <pre><code lang="javascript">
+    import 'node_modules/blahblah/fairdata.css'
+                    </code></pre>
+                </p>
+                <a class="title" name="usage-vue" href="#usage-vue"><h3>Vue.js</h3></a>
+                <p>
+                    Add fairdata ui as dependency:
+                    <pre><code>
+    npm install TODO --save
+                    </code></pre>
+                    TODO
+                </p>
+                <a class="title" name="development" href="#development"><h2>Development</h2></a>
+                <p>Development workflow requires Node and npm to be installed on your development machine.</p>
+                <p>
+                    If you want to customize the styles, it can be done by using a development server with <a href="https://gulpjs.com/">Gulp.js</a>. Development server provides this documentation page, where all the components are present.
+                    Gulp automatically compiles the SCSS, injects styles and hot reloads documentation page when changes detected. Gulp provides also a task to build and copy necessary files for production use.
+                </p>
+                <p>Start customizing the styles by installing requirements and start development server:</p>
+    <pre><code class="bash">
+    npm install
+    npm run
+    </code></pre>
+                <p>Now you should have the documentation running on <a href="http://localhost:3000">http://localhost:3000</a> where you can modify all the components.</p>
+                <p>A compiled version of styles can be done with <code>npm run build</code>.</p>
+                <a class="title" name="components" href="#components"><h2>Components</h2></a>
+                <hr />
+                <a class="title" name="components-alerts" href="#components-alerts"><h3>Alerts</h3></a>
+                <p>Alerts can be used with any length of text and alerts can contain also links. Dismissable alerts are not available.
+                    Bellow is listed all implemented variations:</p>
+                <div class="example-container">
+                    <div class="items">
+                        <div class="fd-alert fd-primary">This is a primary alert!</div>
+                        <div class="fd-alert fd-success">This is a success alert!</div>
+                        <div class="fd-alert fd-danger">This is a danger alert! <a href="#">Alerts can contain also links.</a></div>
+                    </div>
+                    <pre>
+                        <code class="html">
+    &lt;div class="fd-alert fd-primary"&gt;This is a primary alert!&lt;/div&gt;
+    &lt;div class="fd-alert fd-danger"&gt;This is a success alert!&lt;/div&gt;
+    &lt;div class="fd-alert fd-danger"&gt;This is a danger alert! &lt;a href="#"&gt;Alerts can contain also links.&lt;/a&gt; &lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+                <a class="title" name="components-buttons" href="#components-buttons"><h3>Buttons</h3></a>
+                <p>
+                    Fairdata component library defines some predefined button styles:
+                </p>
+                <div class="example-container">
+                    <p>Regular buttons:</p>
+                    <div class="items">
+                        <button class="fd-button fd-primary">Success</button>
+                        <button class="fd-button fd-success">Success</button>
+                        <button class="fd-button fd-danger">Danger</button>
+                        <button class="fd-button fd-success fd-disabled">Disabled</button>
+                    </div>
+                    <pre><code class="html">
+    &lt;button class="fd-button fd-primary"&gt;fd-primary&lt;/button&gt;
+    &lt;button class="fd-button fd-success"&gt;fd-success&lt;/button&gt;
+    &lt;button class="fd-button fd-danger"&gt;fd-danger&lt;/button&gt;
+    &lt;button class="fd-button fd-success disabled"&gt;Disabled&lt;/button&gt;
+                    </code></pre>
+                    <p>All variations can be used as outline button with <code>fd-outline-</code> class prefix:</p>
+                    <div class="items">
+                        <button class="fd-button fd-outline-primary">Success</button>
+                        <button class="fd-button fd-outline-success">Success</button>
+                        <button class="fd-button fd-outline-danger">Danger</button>
+                        <button class="fd-button fd-outline-success fd-disabled">Disabled</button>
+                    </div>
+                    <pre><code class="html">
+    &lt;button class="fd-button fd-outline-primary"&gt;Primary&lt;/button&gt;
+    &lt;button class="fd-button fd-outline-success"&gt;Success&lt;/button&gt;
+    &lt;button class="fd-button fd-outline-danger"&gt;Danger&lt;/button&gt;
+    &lt;button class="fd-button fd-outline-success fd-disabled"&gt;Disabled&lt;/button&gt;
+                    </code></pre>
+                    <p>A button can be disabled by adding <code>fd-disabled</code> class to it.<br>
+                        Padding can be increased by adding <code>fd-large</code> class to ay button</p>
+                    <div class="items">
+                        <button class="fd-button fd-success fd-large">Success large</button>
+                    </div>
+                    <pre><code class="html">
+    &lt;button class="fd-button fd-success large"&gt;Success large&lt;/button&gt;
+                    </code></pre>
+                </div>
+                <a class="title" name="components-card" href="#components-card"><h3>Card</h3></a>
+                <p>
+                    Card implements a simple container for content. Card can include a title and any length of content.<br>
+                    Additional actions can be included to a card. Actions should contain one or more buttons. The buttons inside actions container will be adjusted properly for small screen width.
+                </p>
+                <div class="example-container">
+                    <div class="items">
+                        <div class="fd-card">
+                            <h1>Card title</h1>
+                            <hr>
+                            <p>This is a cool card. Bellow is some actions:</p>
+                            <div class="actions">
+                                <button type="button" class="fd-button fd-outline-success">Action 1</button>
+                                <button type="button" class="fd-button fd-danger">Action 2</button>
+                            </div>
+                        </div>
+                    </div>
+                    <pre><code class="html">
+    &lt;div class="fd-card"&gt;
+        &lt;h1&gt;Card title&lt;/h1&gt;
+        &lt;hr&gt;
+        &lt;p&gt;This is a cool card. Bellow is some actions:&lt;/p&gt;
+        &lt;div class="actions"&gt;
+            &lt;button type="button" class="fd-button fd-outline-success"&gt;Action 1&lt;/button&gt;
+            &lt;button type="button" class="fd-button fd-danger"&gt;Action 2&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+                <a class="title" name="components-footer" href="#components-footer"><h3>Footer</h3></a>
+                <p>Fairdata component library defines a sample footer to be used in Fairdata services. An example of footer can be found in the end of this documentation page. Footer is designed to fold properly across all screen widths.</p>
+                <p>Footer should be placed in the end of page. For layout to work properly footer, header and container should be inside an element with <code>display: flex;</code> and <code>flex-direction: column;</code>, as well with width and height of 100% related to the body.</p>
+                <p class="fd-alert fd-primary"> Official translations for footer texts are defined bellow and should be used if context is localized</p>
+                <div class="example-container">
+                <p>
+                    <strong>Finnish texts:</strong>
+                    <ul>
+                        <li>Fairdata-palvelut järjestää opetus- ja kulttuuriministerö ja toimittaa CSC – Tieteen tietotekniikan keskus Oy</li>
+                        <li>Terms and Policies: Käyttöpolitiikat ja ehdot, TODO: Add finnish link here</li>
+                        <li>Contracts and Privacy: Sopimukset ja tietosuoja, TODO: Add finnish link here</li>
+                    </ul>
+                </p>
+                <p class="fd-alert fd-primary">If you prefer to use a four column footer instead of five columns, you need to update the column widths. The sum of widths and offsets should be equal to 12 on every breakpoint.</p>
+                    <pre><code class="html">
+    &lt;div class="row no-gutters"&gt;
+        &lt;div class="col col-lg-4 col-md-12 col-sm-12 col-12"&gt;
+            &lt;span&gt;Fairdata&lt;/span&gt;
+            &lt;p&gt;
+                The Fairdata services are offered by the&lt;strong&gt; Ministry of Education and Culture &lt;/strong&gt;and produced by&lt;strong&gt; CSC – IT Center for Science Ltd.&lt;/strong&gt;
+            &lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="col padding-right col-lg-2 col-md-3 col-sm-6 offset-lg-1"&gt;
+            &lt;span&gt;Information&lt;/span&gt;
+            &lt;p&gt;
+                &lt;a href="https://www.fairdata.fi/en/ida-research-data-storage-service-terms-of-use/"&gt;Terms and Policies&lt;/a&gt;&lt;br&gt;
+                &lt;a href="https://www.fairdata.fi/en/utilisation/contracts-and-privacy/"&gt;Contracts and Privacy&lt;/a&gt;
+            &lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="col padding-right col-lg-2 col-md-3 col-sm-6 col-6"&gt;
+            &lt;span&gt;Accessibility&lt;/span&gt;
+            &lt;p&gt;
+                &lt;a href="#"&gt;Accessibility statement&lt;/a&gt;&lt;br&gt;
+                &lt;a href="#"&gt;Sitemap&lt;/a&gt;
+            &lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="col col-lg-2 col-md-3 col-sm-6 col-6"&gt;
+            &lt;span&gt;Contact&lt;/span&gt;
+            &lt;p&gt;&lt;a href="mailto:servicedesk@csc.fi"&gt;servicedesk@csc.fi&lt;/a&gt;&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="col col-lg-1 col-md-3 col-sm-6 col-6"&gt;
+            &lt;span&gt;Follow&lt;/span&gt;
+            &lt;p&gt;
+                &lt;a href="https://twitter.com/CSCfi"&gt;Twitter&lt;/a&gt;&lt;br&gt;
+                &lt;a href="#"&gt;What's new&lt;/a&gt;
+            &lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+                    </code></pre>
+                </div>
+                <a class="title" name="components-header" href="#components-header"><h3>Header</h3></a>
+                <p>Header should be placed in the start of page. For layout to work properly header, footer and container should be contained inside an element with <code>display: flex;</code> and <code>flex-direction: column;</code>, as well with width and height of 100% related to the body.</p>
+                <div class="example-container">
+                <p></p>Additional columns can be added inside the row element, for example language selector etc.</p>
+                <pre><code lang="html">
+    &lt;div class="fd-header container-fluid"&gt;
+        &lt;div class="row no-gutter"&gt;
+            &lt;div class="col-md-10 col-sm-10 col-10"&gt;
+                &lt;img src="fairdata-logo.svg" alt="Fairdata logo" class="logo"&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+                </code></pre>
+                </div>
+                <a class="title" name="colors" href="#colors"><h2>Colors</h2></a>
+                <hr />
+                <p>Color palette to be defined here.</p>
+            </div>
+
+            <div class="fd-footer container-fluid">
+                <div class="row no-gutters">
+                    <div class="col col-lg-4 col-md-12 col-sm-12 col-12">
+                        <span>Fairdata</span>
+                        <p>
+                            The Fairdata services are offered by the<strong> Ministry of Education and Culture </strong>and produced by<strong> CSC – IT Center for Science Ltd.</strong>
+                        </p>
+                    </div>
+                    <div class="col padding-right col-lg-2 col-md-3 col-sm-6 offset-lg-1">
+                        <span>Information</span>
+                        <p>
+                            <a href="https://www.fairdata.fi/en/ida-research-data-storage-service-terms-of-use/">Terms and Policies</a><br>
+                            <a href="https://www.fairdata.fi/en/utilisation/contracts-and-privacy/">Contracts and Privacy</a>
+                        </p>
+                    </div>
+                    <div class="col padding-right col-lg-2 col-md-3 col-sm-6 col-6">
+                        <span>Accessibility</span>
+                        <p>
+                            <a href="#">Accessibility statement</a><br>
+                            <a href="#">Sitemap</a>
+                        </p>
+                    </div>
+                    <div class="col col-lg-2 col-md-3 col-sm-6 col-6">
+                        <span>Contact</span>
+                        <p><a href="mailto:servicedesk@csc.fi">servicedesk@csc.fi</a></p>
+                    </div>
+                    <div class="col col-lg-1 col-md-3 col-sm-6 col-6">
+                        <span>Follow</span>
+                        <p>
+                            <a href="https://twitter.com/CSCfi">Twitter</a><br>
+                            <a href="#">What's new</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+{
+  "name": "fairdata-ui",
+  "version": "1.0.0",
+  "description": "Common Fairdata service UI components and style guidelines which can be shared by all Fairdata service implementations.",
+  "main": "",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CSCfi/fairdata-ui.git"
+  },
+  "author": "CSC - IT Center for Science",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CSCfi/fairdata-ui/issues"
+  },
+  "homepage": "https://cscfi.github.io/fairdata-ui/",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^4.14.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.0"
+  },
+  "files": [
+    "dist/{css,fonts}/*.{css,ttf}",
+    "scss/**/*.scss"
+  ]
+}

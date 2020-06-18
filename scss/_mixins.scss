@@ -1,0 +1,28 @@
+@mixin button-variant($color) {
+    color: white;
+    background-color: $color;
+    &:not(.fd-disabled) {
+        &:hover{
+            background-color: darken($color, 10);
+        }
+    }
+}
+
+@mixin button-outline-variant($color) {
+    border: 2px solid $color;
+    color: $color;
+    background-color: white;
+    &:not(.fd-disabled) {
+        &:hover {
+            color: white;
+            background-color: $color;
+        }
+    }
+}
+
+
+@mixin alert-variant($color) {
+    background-color: map-get($fd-light-colors, $color);
+    color: map-get($fd-colors, $color);
+    border: 1px solid map-get($fd-colors, $color);
+}

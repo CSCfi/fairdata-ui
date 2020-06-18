@@ -1,0 +1,32 @@
+a {
+    color: $color-link;
+    display: inline;
+    text-decoration: underline;
+}
+
+h1, h2, h3 {
+    font-weight: normal;
+    line-height: 1.2;
+}
+
+hr {
+    width: 100%;
+    border-top: 1px solid $hr-background;
+    border-bottom: 0;
+}
+
+.right {
+    text-align: right;
+}
+
+.center {
+    text-align: center;
+}
+
+.fd-text-muted {
+    color: $color-muted;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}

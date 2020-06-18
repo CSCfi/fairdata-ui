@@ -1,0 +1,26 @@
+$color-primary: #0075a3;
+$color-success: #03881C;
+$color-danger: #B70C00;
+
+$color-primary-light: #e9f8ff;
+$color-success-light: #eaffee;
+$color-danger-light: #FDEFEF;
+
+
+$color-link: #0076A3;
+$color-muted: #595959;
+
+$hr-background: #70707034;
+
+
+$fd-colors: (
+    "primary": $color-primary,
+    "success": $color-success,
+    "danger": $color-danger,
+);
+
+$fd-light-colors: (
+    "primary": $color-primary-light,
+    "success": $color-success-light,
+    "danger": $color-danger-light,
+)
