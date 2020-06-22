@@ -1,12 +1,12 @@
 .fd-button {
-    padding: 10px 30px;
+    padding: .75rem 2rem;
     border: 0;
     color: white;
     transition: background-color .1s linear;
     cursor: pointer;
 
     &.fd-large {
-        padding: 15px 45px;
+        padding: 1rem 2.6rem;
     }
 
     &.fd-disabled {
