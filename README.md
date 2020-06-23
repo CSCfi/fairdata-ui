@@ -1,4 +1,4 @@
-# fairdata-ui-dev
+# fairdata-ui
 Common Fairdata service UI components and style guidelines which can be shared by all Fairdata service implementations.
 
 Online documentation can be found [here](https://cscfi.github.io/fairdata-ui/).

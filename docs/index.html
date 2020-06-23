@@ -161,47 +161,51 @@
                 <p>Footer should be placed in the end of page. For layout to work properly footer, header and container should be inside an element with <code>display: flex;</code> and <code>flex-direction: column;</code>, as well with width and height of 100% related to the body.</p>
                 <p class="fd-alert fd-primary"> Official translations for footer texts are defined bellow and should be used if context is localized</p>
                 <div class="example-container">
-                <p>
                     <strong>Finnish texts:</strong>
                     <ul>
                         <li>Fairdata-palvelut järjestää opetus- ja kulttuuriministerö ja toimittaa CSC – Tieteen tietotekniikan keskus Oy</li>
-                        <li>Terms and Policies: Käyttöpolitiikat ja ehdot, TODO: Add finnish link here</li>
-                        <li>Contracts and Privacy: Sopimukset ja tietosuoja, TODO: Add finnish link here</li>
+                        <li><b>Terms and Policies</b>: Käyttöpolitiikat ja ehdot, <code>https://www.fairdata.fi/hyodyntaminen/kayttopolitiikat-ja-ehdot/</code></li>
+                        <li><b>Contracts and Privacy</b>: Sopimukset ja tietosuoja, <code>https://www.fairdata.fi/hyodyntaminen/sopimukset/</code></li>
+                        <li><b>Accessibility</b>: Saavutettavuus, <code>finnish accessibility link</code></li>
+                        <li><b>What's new</b>: Uutiset, <code>finnish news link</code></li>
                     </ul>
-                </p>
-                <p class="fd-alert fd-primary">If you prefer to use a four column footer instead of five columns, you need to update the column widths. The sum of widths and offsets should be equal to 12 on every breakpoint.</p>
+                    <strong>Swedish texts:</strong>
+                    <ul>
+                        <li>Fairdata...</li>
+                        <li><b>Terms and Policies</b>: todo, <code>swedish link</code></li>
+                        <li><b>Contracts and Privacy</b>: todo, <code>swedish link</code></li>
+                        <li><b>Accessibility</b>: todo, <code>swedish link</code></li>
+                        <li><b>What's new</b>: todo, <code>swedish link</code></li>
+                    </ul>
+                    <p class="fd-alert fd-primary">If you prefer to use a four column footer instead of five columns, you need to update the column widths. The sum of widths and offsets should be equal to 12 on every breakpoint.</p>
                     <pre><code class="html">
-    &lt;div class="row no-gutters"&gt;
-        &lt;div class="col col-lg-4 col-md-12 col-sm-12 col-12"&gt;
-            &lt;span&gt;Fairdata&lt;/span&gt;
-            &lt;p&gt;
-                The Fairdata services are offered by the&lt;strong&gt; Ministry of Education and Culture &lt;/strong&gt;and produced by&lt;strong&gt; CSC – IT Center for Science Ltd.&lt;/strong&gt;
-            &lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div class="col padding-right col-lg-2 col-md-3 col-sm-6 offset-lg-1"&gt;
-            &lt;span&gt;Information&lt;/span&gt;
-            &lt;p&gt;
-                &lt;a href="https://www.fairdata.fi/en/ida-research-data-storage-service-terms-of-use/"&gt;Terms and Policies&lt;/a&gt;&lt;br&gt;
-                &lt;a href="https://www.fairdata.fi/en/utilisation/contracts-and-privacy/"&gt;Contracts and Privacy&lt;/a&gt;
-            &lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div class="col padding-right col-lg-2 col-md-3 col-sm-6 col-6"&gt;
-            &lt;span&gt;Accessibility&lt;/span&gt;
-            &lt;p&gt;
-                &lt;a href="#"&gt;Accessibility statement&lt;/a&gt;&lt;br&gt;
-                &lt;a href="#"&gt;Sitemap&lt;/a&gt;
-            &lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div class="col col-lg-2 col-md-3 col-sm-6 col-6"&gt;
-            &lt;span&gt;Contact&lt;/span&gt;
-            &lt;p&gt;&lt;a href="mailto:servicedesk@csc.fi"&gt;servicedesk@csc.fi&lt;/a&gt;&lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div class="col col-lg-1 col-md-3 col-sm-6 col-6"&gt;
-            &lt;span&gt;Follow&lt;/span&gt;
-            &lt;p&gt;
-                &lt;a href="https://twitter.com/CSCfi"&gt;Twitter&lt;/a&gt;&lt;br&gt;
-                &lt;a href="#"&gt;What's new&lt;/a&gt;
-            &lt;/p&gt;
+    &lt;div class="fd-footer container-fluid"&gt;
+        &lt;div class="row no-gutters"&gt;
+            &lt;div class="col col-lg-4 col-md-12 col-sm-12 col-12"&gt;
+                &lt;span&gt;Fairdata&lt;/span&gt;
+                &lt;p&gt;
+                    The Fairdata services are offered by the&lt;strong&gt; Ministry of Education and Culture &lt;/strong&gt;and produced by&lt;strong&gt; CSC – IT Center for Science Ltd.&lt;/strong&gt;
+                &lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="col padding-right col-lg-2 col-md-3 col-sm-6 offset-lg-1"&gt;
+                &lt;span&gt;Information&lt;/span&gt;
+                &lt;p&gt;&lt;a href="https://www.fairdata.fi/en/ida-research-data-storage-service-terms-of-use/"&gt;Terms and Policies&lt;/a&gt;&lt;/p&gt;
+                &lt;p&gt;&lt;a href="https://www.fairdata.fi/en/utilisation/contracts-and-privacy/"&gt;Contracts and Privacy&lt;/a&gt;&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="col padding-right col-lg-2 col-md-3 col-sm-6 col-6"&gt;
+                &lt;span&gt;Accessibility&lt;/span&gt;
+                &lt;p&gt;&lt;a href="#"&gt;Accessibility statement&lt;/a&gt;&lt;/p&gt;
+                &lt;p&gt;&lt;a href="#"&gt;Sitemap&lt;/a&gt;&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="col col-lg-2 col-md-3 col-sm-6 col-6"&gt;
+                &lt;span&gt;Contact&lt;/span&gt;
+                &lt;p&gt;&lt;a href="mailto:servicedesk@csc.fi"&gt;servicedesk@csc.fi&lt;/a&gt;&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="col col-lg-1 col-md-3 col-sm-6 col-6"&gt;
+                &lt;span&gt;Follow&lt;/span&gt;
+                &lt;p&gt;&lt;a href="https://twitter.com/CSCfi"&gt;Twitter&lt;/a&gt;&lt;/p&gt;
+                &lt;p&gt;&lt;a href="#"&gt;What's new&lt;/a&gt;&lt;/p&gt;
+            &lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
                     </code></pre>
@@ -209,7 +213,7 @@
                 <a class="title" name="components-header" href="#components-header"><h3>Header</h3></a>
                 <p>Header should be placed in the start of page. For layout to work properly header, footer and container should be contained inside an element with <code>display: flex;</code> and <code>flex-direction: column;</code>, as well with width and height of 100% related to the body.</p>
                 <div class="example-container">
-                <p></p>Additional columns can be added inside the row element, for example language selector etc.</p>
+                <p>Additional columns can be added inside the row element, for example language selector etc.</p>
                 <pre><code lang="html">
     &lt;div class="fd-header container-fluid"&gt;
         &lt;div class="row no-gutter"&gt;
@@ -235,17 +239,13 @@
                     </div>
                     <div class="col padding-right col-lg-2 col-md-3 col-sm-6 offset-lg-1">
                         <span>Information</span>
-                        <p>
-                            <a href="https://www.fairdata.fi/en/ida-research-data-storage-service-terms-of-use/">Terms and Policies</a><br>
-                            <a href="https://www.fairdata.fi/en/utilisation/contracts-and-privacy/">Contracts and Privacy</a>
-                        </p>
+                        <p><a href="https://www.fairdata.fi/en/ida-research-data-storage-service-terms-of-use/">Terms and Policies</a></p>
+                        <p><a href="https://www.fairdata.fi/en/utilisation/contracts-and-privacy/">Contracts and Privacy</a></p>
                     </div>
                     <div class="col padding-right col-lg-2 col-md-3 col-sm-6 col-6">
                         <span>Accessibility</span>
-                        <p>
-                            <a href="#">Accessibility statement</a><br>
-                            <a href="#">Sitemap</a>
-                        </p>
+                        <p><a href="#">Accessibility statement</a></p>
+                        <p><a href="#">Sitemap</a></p>
                     </div>
                     <div class="col col-lg-2 col-md-3 col-sm-6 col-6">
                         <span>Contact</span>
@@ -253,10 +253,8 @@
                     </div>
                     <div class="col col-lg-1 col-md-3 col-sm-6 col-6">
                         <span>Follow</span>
-                        <p>
-                            <a href="https://twitter.com/CSCfi">Twitter</a><br>
-                            <a href="#">What's new</a>
-                        </p>
+                        <p><a href="https://twitter.com/CSCfi">Twitter</a></p>
+                        <p><a href="#">What's new</a></p>
                     </div>
                 </div>
             </div>
