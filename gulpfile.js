@@ -12,22 +12,31 @@ function reload(done) {
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', gulp.series(function() {
-    return gulp.src(["./scss/fairdata.scss", "./scss/docs/*.scss"])
+    return gulp.src("./scss/fairdata.scss")
         .pipe(sass({
             includePaths: ['node_modules']
         }))
         .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(concat('fairdata.css'))
-        .pipe(gulp.dest("./docs"))
+        .pipe(gulp.dest("./dist"))
         .pipe(browserSync.stream());
 }));
+
+gulp.task('sass-docs', gulp.series(function() {
+    return gulp.src("./scss/docs/*.scss")
+        .pipe(sass({
+            includePaths: ['node_modules']
+        }))
+        .pipe(cleanCSS({compatibility: 'ie8'}))
+        .pipe(concat('fairdata-docs.css'))
+        .pipe(gulp.dest("./docs"))
+        .pipe(browserSync.stream());
+}))
 
 // Serve files from docs folder
 gulp.task('serve', gulp.series('sass', function() {
     browserSync.init({
-        server: {
-            baseDir: "docs",
-        },
+        server: ["docs", "dist"],
         port: port
     });
 
@@ -35,7 +44,7 @@ gulp.task('serve', gulp.series('sass', function() {
 
 // Watch changes in files and build sass/reload browsers
 gulp.task('watch', function() {
-    gulp.watch("./scss/**/*.scss", gulp.series('sass'));
+    gulp.watch("./scss/**/*.scss", gulp.parallel('sass', 'sass-docs'));
     gulp.watch("./docs/*.html", gulp.series(reload));
 })
 
@@ -46,7 +55,7 @@ gulp.task('build', gulp.parallel(function() {
         }))
         .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(concat('fairdata.css'))
-        .pipe(gulp.dest("./dist/css"));
+        .pipe(gulp.dest("./dist"));
 }, function() {
     return gulp.src(['./fonts/**/*'])
         .pipe(gulp.dest('./dist/fonts'));
