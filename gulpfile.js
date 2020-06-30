@@ -22,7 +22,7 @@ gulp.task('sass', gulp.series(function() {
 
 // Compile sass used in documentation and auto-inject into browsers
 gulp.task('sass-docs', gulp.series(function() {
-    return gulp.src(["./scss/docs/*.scss", "./scss/fairdata.scss"])
+    return gulp.src("./scss/docs/*.scss")
         .pipe(sass({
             includePaths: ['node_modules']
         }))
@@ -36,7 +36,9 @@ gulp.task('sass-docs', gulp.series(function() {
 gulp.task('serve', gulp.series('sass', function() {
     browserSync.init({
         server: 'docs',
-        port: port
+        port: port,
+        open: false,
+        ui: false
     });
 
 }));

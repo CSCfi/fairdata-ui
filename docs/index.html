@@ -64,17 +64,30 @@
                     TODO
                 </p>
                 <a class="title" name="development" href="#development"><h2>Development</h2></a>
-                <p>Development workflow requires Node and npm to be installed on your development machine.</p>
                 <p>
-                    If you want to customize the styles, it can be done by using a development server with <a href="https://gulpjs.com/">Gulp.js</a>. Development server provides this documentation page, where all the components are present.
+                    If you want to customize the styles, it can be done by using a development server with <a href="https://gulpjs.com/">Gulp.js</a> and <a herf="https://www.browsersync.io/">Browsersync</a>. Development server provides this documentation page, where all the components are present.
                     Gulp automatically compiles the SCSS, injects styles and hot reloads documentation page when changes detected. Gulp provides also a task to build and copy necessary files for production use.
                 </p>
-                <p>Start customizing the styles by installing requirements and start development server:</p>
+                <p>Start customizing the styles with:</p>
+                <a class="title" name="development-docker" href="#development-docker"><h3>Docker</h3></a>
+                <p>If you have Docker installed you can just build the image and start local development server by:</p>
+                <pre><code>
+    docker build -t fairdata-ui .
+    docker run -p 3000:3000 -v ${PWD}:/code --name fairdata-ui --rm fairdata-ui
+                </code></pre>
+                <p>Now you should have the documentation running on <a href="http://localhost:3000">http://localhost:3000</a></p>
+                <p>With Docker you can create the bundled css by (when development server running):</p>
+                <pre><code>
+    docker run --rm fairdata-ui npm run build
+                </code></pre>
+
+                <a class="title" name="development-nondocker" href="#development-nondocker"><h3>Without Docker</h3></a>
+                <p>Development workflow requires Node and npm to be installed on your development machine. Install requirements and start local development server by:</p>
     <pre><code class="bash">
     npm install
     npm run
     </code></pre>
-                <p>Now you should have the documentation running on <a href="http://localhost:3000">http://localhost:3000</a> where you can modify all the components.</p>
+                <p>Now you should have the documentation running on <a href="http://localhost:3000">http://localhost:3000</a></p>
                 <p>A compiled version of styles can be done with <code>npm run build</code>.</p>
                 <a class="title" name="components" href="#components"><h2>Components</h2></a>
                 <hr />
