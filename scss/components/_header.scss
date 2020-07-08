@@ -20,4 +20,21 @@
         max-width: 320px;
         width: 90%;
     }
+
+    .language-selector-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .language-selector-container {
+            width: 100px;
+            display: flex;
+            justify-content: space-around;
+
+            .language-choice {
+                cursor: pointer;
+                text-transform: uppercase;
+            }
+        }
+    }
 }

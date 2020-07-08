@@ -78,7 +78,7 @@
                 <p>Now you should have the documentation running on <a href="http://localhost:3000">http://localhost:3000</a></p>
                 <p>With Docker you can create the bundled css by (when development server running):</p>
                 <pre><code>
-    docker run --rm fairdata-ui npm run build
+    docker run -v ${PWD}:/code --rm fairdata-ui npm run build
                 </code></pre>
 
                 <a class="title" name="development-nondocker" href="#development-nondocker"><h3>Without Docker</h3></a>
@@ -178,6 +178,16 @@
                         </code>
                     </pre>
                 </div>
+                <a class="title" name="components-content" href="#components-content"><h3>Content</h3></a>
+                <p>Content of the page should be put inside of container. This container has specified max widths for different screen sizes and can be used as a container for grid system.</p>
+                <div class="example-container">
+                    <p>Add your content:</p>
+                    <pre><code class="html">
+    &lt;div class="fd-content container"&gt;
+        &lt;p&gt;Page content here&lt;/p&gt;
+    &lt;/div&gt;
+                    </code></pre>
+                </div>
                 <a class="title" name="components-footer" href="#components-footer"><h3>Footer</h3></a>
                 <p>Fairdata component library defines a sample footer to be used in Fairdata services. An example of footer can be found in the end of this documentation page. Footer is designed to fold properly across all screen widths.</p>
                 <p>Footer should be placed in the end of page. For layout to work properly footer, header and container should be inside an element with <code>display: flex;</code> and <code>flex-direction: column;</code>, as well with width and height of 100% related to the body.</p>
@@ -235,8 +245,8 @@
                 <a class="title" name="components-header" href="#components-header"><h3>Header</h3></a>
                 <p>Header should be placed in the start of page. For layout to work properly header, footer and container should be contained inside an element with <code>display: flex;</code> and <code>flex-direction: column;</code>, as well with width and height of 100% related to the body.</p>
                 <div class="example-container">
-                <p>Additional columns can be added inside the row element, for example language selector etc.</p>
-                <pre><code lang="html">
+                    <p>A basic header with logo can be added with:</p>
+                    <pre><code lang="html">
     &lt;div class="fd-header container-fluid"&gt;
         &lt;div class="row no-gutter"&gt;
             &lt;div class="col-md-10 col-sm-10 col-10"&gt;
@@ -244,7 +254,33 @@
             &lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-                </code></pre>
+                    </code></pre>
+                    <p>Add pre-styled language selectors by adding following after the first column in header:</p>
+                    <pre><code lang="html">
+    &lt;div class="col-md-2 col-sm-2 col-2 language-selector-wrapper"&gt;
+        &lt;div class="language-selector-container"&gt;
+            &lt;span class="language-choice" role="button" tabindex="0"&gt;fi&lt;/span&gt;
+            &lt;span class="language-choice" role="button" tabindex="0"&gt;sv&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+                    </code></pre>
+                </div>
+                <a class="title" name="layout" href="#layout"><h2>Layout</h2></a>
+                <p>A basic Fairdata layout can be achieved with the <a href="#components-header">header</a>, <a href="#components-footer">footer</a> and content components:</p>
+                <div class="example-container ">
+                    <pre><code lang="html">
+    &lt;body&gt;
+        &lt;div class="fd-header container-fluid"&gt;
+            ...
+        &lt;/div&gt;
+        &lt;div class="fd-content container"&gt;
+            &lt;p&gt;Page content here&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="fd-footer container-fluid"&gt;
+            ...
+        &lt;/div&gt;
+    &lt;/body&gt;
+                    </code></pre>
                 </div>
                 <a class="title" name="colors" href="#colors"><h2>Colors</h2></a>
                 <hr />
