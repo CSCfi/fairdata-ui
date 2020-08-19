@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link rel="icon" href="assets/favico.ico">
+        <link rel="icon" type="image/png" href="assets/favicon.png">
         <link href="fairdata-docs.css" rel="stylesheet">
         <link rel="stylesheet"
             href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css">
@@ -298,20 +298,26 @@
                     <p>Toggle the sample cookies notification:</p>
                     <p><button class="fd-button fd-outline-primary" onclick="toggleCookiesNotification();" id="toggleNotification">Show notification</button></p>
                     <pre><code lang="html">
-    &lt;div class="cookies-acceptance" id="cookiesBanner"&gt;
-        &lt;div class="container row no-gutters"&gt;
-            &lt;div class="col-12 col-lg-7"&gt;
-                &lt;p&gt;By using Fairdata’s services you agree to our Cookies Use. We use cookies to improve your experience and make our services work better.
-                &lt;a href="#"&gt;View the Fairdata Privacy Policy.&lt;/a&gt;
-            &lt;/div&gt;
-            &lt;div class="col-12 col-lg-5 actions"&gt;
-                &lt;button class="fd-button fd-success"&gt;Cookies Settings&lt;/button&gt;
-                &lt;button class="fd-button fd-success"&gt;Accept All Cookies&lt;/button&gt;
-            &lt;/div&gt;
+    &lt;div class="cookies-banner" id="cookiesBanner"&gt;
+        &lt;div class="text-content"&gt;
+            &lt;p&gt;Fairdata uses cookies to improve your experience and make our services work better.&lt;br&gt;
+            &lt;a href="#"&gt;View the Fairdata Privacy Policy.&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="actions"&gt;
+            &lt;button&gt;X&lt;/button&gt;
         &lt;/div&gt;
     &lt;/div&gt;
                     </code></pre>
                 </div>
+
+                <a class="title" name="favicon" href="#favicon"><h2>Favicon</h2></a>
+                <hr />
+                <p>Fairdata component library includes a favicon to be used in all services utilizing the common Fairdata styles.</p>
+                <div class="example-container ">
+                    <p>Bellow is 256x256 px PNG version of the favicon</p>
+                    <a href="assets/favicon.png" download><img src="assets/favicon.png" alt="Fairdata favicon"></a>
+                </div>
+
                 <a class="title" name="colors" href="#colors"><h2>Colors</h2></a>
                 <hr />
                 <p>Colors and different variations used in Fairdata styles are listed bellow:</p>
@@ -327,19 +333,6 @@
                         <div class="color fd-primary-light" onclick="window.getSelection().selectAllChildren(this);">#e9f8ff</div>
                         <div class="color fd-success-light" onclick="window.getSelection().selectAllChildren(this);">#eaffee</div>
                         <div class="color fd-danger-light" onclick="window.getSelection().selectAllChildren(this);">#FDEFEF</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="cookies-acceptance" id="cookiesBanner">
-                <div class="container row no-gutters">
-                    <div class="col-12 col-lg-7">
-                        <p>By using Fairdata’s services you agree to our Cookies Use. We use cookies to improve your experience and make our services work better.
-                        <a href="#">View the Fairdata Privacy Policy.</a>
-                    </div>
-                    <div class="col-12 col-lg-5 actions">
-                        <button class="fd-button fd-success">Cookies Settings</button>
-                        <button class="fd-button fd-success">Accept All Cookies</button>
                     </div>
                 </div>
             </div>
@@ -371,6 +364,15 @@
                         <p><a href="https://twitter.com/Fairdata_fi">Twitter</a></p>
                         <p><a href="#">What's new</a></p>
                     </div>
+                </div>
+            </div>
+            <div class="cookies-banner" id="cookiesBanner">
+                <div class="text-content">
+                    <p>Fairdata uses cookies to improve your experience and make our services work better.<br>
+                    <a href="#">View the Fairdata Privacy Policy.</a>
+                </div>
+                <div class="actions">
+                    <button>X</button>
                 </div>
             </div>
         </div>
