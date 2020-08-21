@@ -20,6 +20,15 @@ gulp.task('sass', gulp.series(function() {
         .pipe(gulp.dest("./dist"));
 }));
 
+// Compile and minify only the notification component to an independent unit
+gulp.task('sass-notification', gulp.series(function() {
+    return gulp.src("./scss/notification.scss")
+    .pipe(sass().on('error', sass.logError))
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(concat('notification.css'))
+    .pipe(gulp.dest("./dist"));
+}));
+
 // Compile sass used in documentation and auto-inject into browsers
 gulp.task('sass-docs', gulp.series(function() {
     return gulp.src("./scss/docs/*.scss")
@@ -49,7 +58,7 @@ gulp.task('watch', function() {
     gulp.watch("./docs/*.html", gulp.series(reload));
 })
 
-gulp.task('build', gulp.parallel('sass', function() {
+gulp.task('build', gulp.parallel('sass', 'sass-notification', function() {
     return gulp.src(['./fonts/**/*'])
         .pipe(gulp.dest('./dist/fonts'));
 }))

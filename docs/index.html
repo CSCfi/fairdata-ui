@@ -8,8 +8,8 @@
         <title>Documentation for Fairdata UI components and guidelines</title>
         <script type="text/javascript">
             hljs.initHighlightingOnLoad();
-            function toggleCookiesNotification() {
-                var notification = document.getElementById("cookiesBanner");
+            function toggleNotification() {
+                var notification = document.getElementById("notificationBanner");
                 var display = notification.style.display === "flex" ? 'none' : 'flex';
                 var buttonText = display === "flex" ? 'Hide notification' : 'Show notification';
                 notification.style.display = display;
@@ -292,13 +292,13 @@
                     </code></pre>
                 </div>
                 <a class="title" name="components-cookies" href="#components-cookies"><h3>Cookies notification</h3></a>
-                <p>A notification about cookies can be included before footer, outside the actual content component. Notification can contain actions, for example dismiss the notification.</p>
+                <p>A notification about cookies can be included to the page. Note that this repository does not contain any logic to dismiss or hide the notification. Notification styles are available on <code>dist/notification.css</code> and can be used independently from other Fairdata styles.</code> Notification styles can be updated by running <code>npm run gulp -- sass-notification</code> </p>
 
                 <div class="example-container">
                     <p>Toggle the sample cookies notification:</p>
-                    <p><button class="fd-button fd-outline-primary" onclick="toggleCookiesNotification();" id="toggleNotification">Show notification</button></p>
+                    <p><button class="fd-button fd-outline-primary" onclick="toggleNotification();" id="toggleNotification">Show notification</button></p>
                     <pre><code lang="html">
-    &lt;div class="cookies-banner" id="cookiesBanner"&gt;
+    &lt;div class="notification-banner" id="notificationBanner"&gt;
         &lt;div class="text-content"&gt;
             &lt;p&gt;Fairdata uses cookies to improve your experience and make our services work better.&lt;br&gt;
             &lt;a href="#"&gt;View the Fairdata Privacy Policy.&lt;/a&gt;
@@ -366,7 +366,7 @@
                     </div>
                 </div>
             </div>
-            <div class="cookies-banner" id="cookiesBanner">
+            <div class="notification-banner" id="notificationBanner">
                 <div class="text-content">
                     <p>Fairdata uses cookies to improve your experience and make our services work better.<br>
                     <a href="#">View the Fairdata Privacy Policy.</a>
