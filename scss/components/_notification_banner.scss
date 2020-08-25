@@ -6,24 +6,28 @@
     width: 100%;
     z-index: 999;
     background-color: #F3F2F1;
-    padding: 1rem 3rem;
-    align-items: center;
+    padding: 1rem 2rem;
+    align-items: flex-start;
     justify-content: center;
 
-    .actions { flex-grow: 0; }
+    .actions {
+        flex-grow: 0;
+        padding-top: .5rem;
+    }
+
+    p { margin: 0; }
 
     .text-content {
         flex-grow: 3;
         max-width: 800px;
-        margin-right: .5rem;
+        margin-right: .3rem;
     }
 
     button {
         border: 0;
         padding: 0;
-        width: 35px;
-        height: 35px;
-        font-weight: bold;
+        width: 1.5rem;
+        height: 1.5rem;
         text-align: center;
         cursor: pointer;
         color: black;
@@ -32,6 +36,8 @@
         border: 1px solid black;
         transition: all .2s linear;
         transition-property: background-color, color, border;
+        font-size: 1rem;
+        line-height: 0;
         &:hover{
             background-color: map-get($fd-colors, "success");
             color: white;
