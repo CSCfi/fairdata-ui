@@ -23,10 +23,21 @@ gulp.task('sass', gulp.series(function() {
 // Compile and minify only the notification component to an independent unit
 gulp.task('sass-notification', gulp.series(function() {
     return gulp.src("./scss/notification.scss")
-    .pipe(sass().on('error', sass.logError))
-    .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(concat('notification.css'))
-    .pipe(gulp.dest("./dist"));
+        .pipe(sass().on('error', sass.logError))
+        .pipe(cleanCSS({compatibility: 'ie8'}))
+        .pipe(concat('notification.css'))
+        .pipe(gulp.dest("./dist"));
+}));
+
+// Compile (does not minify) footer component and Bootstrap grid
+gulp.task('sass-footer', gulp.series(function() {
+    return gulp.src("./scss/footer.scss")
+        .pipe(sass({
+            includePaths: ['node_modules']
+        }))
+        .pipe(cleanCSS({format: 'beautify'}))
+        .pipe(concat('footer.css'))
+        .pipe(gulp.dest("./dist"));
 }));
 
 // Compile sass used in documentation and auto-inject into browsers
@@ -58,7 +69,7 @@ gulp.task('watch', function() {
     gulp.watch("./docs/*.html", gulp.series(reload));
 })
 
-gulp.task('build', gulp.parallel('sass', 'sass-notification', function() {
+gulp.task('build', gulp.parallel('sass', 'sass-notification', 'sass-footer', function() {
     return gulp.src(['./fonts/**/*'])
         .pipe(gulp.dest('./dist/fonts'));
 }))
