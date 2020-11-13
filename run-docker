@@ -1,0 +1,7 @@
+#!/bin/bash
+
+ROOT=`dirname "$0"`
+cd $ROOT
+
+docker build -t fairdata-ui .
+docker run -p 3000:3000 -v ${PWD}:/code --name fairdata-ui --rm fairdata-ui
