@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="122" height="125" viewBox="0 0 122 125">
+  <g id="etsin" transform="translate(0.312 0.605)">
+    <g id="etsin-2" data-name="etsin" transform="translate(0.075)">
+      <rect id="Rectangle_52" data-name="Rectangle 52" width="26" height="26" transform="translate(63.613 34.395)" fill="#a1d0e2"/>
+      <path id="Path_271" data-name="Path 271" d="M25.512.29v26h-26Z" transform="translate(64.101 34.105)" fill="rgba(77,77,77,0.1)"/>
+      <rect id="Rectangle_59" data-name="Rectangle 59" width="26" height="26" transform="translate(31.613 66.395)" fill="#a1d0e2"/>
+      <rect id="Rectangle_64" data-name="Rectangle 64" width="26" height="26" transform="translate(31.613 98.395)" fill="#a1d0e2"/>
+      <rect id="Rectangle_67" data-name="Rectangle 67" width="26" height="26" transform="translate(-0.387 98.395)" fill="#a1d0e2"/>
+      <rect id="Rectangle_103" data-name="Rectangle 103" width="26" height="26" transform="translate(-0.387 66.395)" fill="#eff8fc"/>
+      <rect id="Rectangle_104" data-name="Rectangle 104" width="26" height="26" transform="translate(31.613 34.395)" fill="#eff8fc"/>
+      <rect id="Rectangle_105" data-name="Rectangle 105" width="26" height="26" transform="translate(63.613 2.395)" fill="#eff8fc"/>
+      <rect id="Rectangle_61" data-name="Rectangle 61" width="26" height="26" transform="translate(95.613 66.395)" fill="#0075a3"/>
+      <rect id="Rectangle_62" data-name="Rectangle 62" width="26" height="26" transform="translate(95.613 98.395)" fill="#0075a3"/>
+      <rect id="Rectangle_54" data-name="Rectangle 54" width="26" height="26" transform="translate(95.613 34.395)" fill="#a1d0e2"/>
+      <rect id="Rectangle_60" data-name="Rectangle 60" width="26" height="26" transform="translate(63.613 66.395)" fill="#15c348"/>
+      <rect id="Rectangle_63" data-name="Rectangle 63" width="26" height="26" transform="translate(63.613 98.395)" fill="#0075a3"/>
+      <rect id="Rectangle_56" data-name="Rectangle 56" width="26" height="26" transform="translate(95.613 2.395)" fill="#a1d0e2"/>
+      <path id="Path_272" data-name="Path 272" d="M25.617.186v26h-26Z" transform="translate(31.997 66.209)" fill="rgba(77,77,77,0.1)"/>
+      <path id="Path_276" data-name="Path 276" d="M25.617.189v26h-26Z" transform="translate(31.997 98.206)" fill="rgba(77,77,77,0.1)"/>
+      <path id="Path_277" data-name="Path 277" d="M25.512.189v26h-26Z" transform="translate(64.101 98.206)" fill="rgba(77,77,77,0.2)"/>
+      <path id="Path_278" data-name="Path 278" d="M26.407.189v26h-26Z" transform="translate(95.206 98.206)" fill="rgba(77,77,77,0.2)"/>
+      <path id="Path_279" data-name="Path 279" d="M26.407.186v26h-26Z" transform="translate(95.206 66.209)" fill="rgba(77,77,77,0.2)"/>
+      <path id="Path_280" data-name="Path 280" d="M25.512.186v26h-26Z" transform="translate(64.101 66.209)" fill="rgba(77,77,77,0.2)"/>
+      <path id="Path_273" data-name="Path 273" d="M25.613.189v26h-26Z" transform="translate(0 98.206)" fill="rgba(77,77,77,0.1)"/>
+      <path id="Path_274" data-name="Path 274" d="M26.407.4v26h-26Z" transform="translate(95.206 2)" fill="rgba(77,77,77,0.1)"/>
+      <path id="Path_275" data-name="Path 275" d="M26.407.29v26h-26Z" transform="translate(95.206 35.105)" fill="rgba(77,77,77,0.1)"/>
+      <path id="Path_281" data-name="Path 281" d="M25.512-.5v26h-26Z" transform="translate(64.101 2.892)" fill="rgba(77,77,77,0.05)"/>
+      <path id="Path_282" data-name="Path 282" d="M25.725.29v26h-26Z" transform="translate(31.888 34.105)" fill="rgba(77,77,77,0.05)"/>
+      <path id="Path_283" data-name="Path 283" d="M25.722.294v26h-26Z" transform="translate(-0.108 66.101)" fill="rgba(77,77,77,0.05)"/>
+    </g>
+    <text id="DOI_URN" data-name="DOI 
+URN" transform="translate(-0.312 12.395)" fill="#11a53c" font-size="13" font-family="Lato-Bold, Lato" font-weight="700" letter-spacing="0.02em"><tspan x="0" y="0">DOI</tspan><tspan y="0" letter-spacing="0.008em"> </tspan><tspan letter-spacing="-0.028em"><tspan x="0" y="14">URN</tspan></tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="60" viewBox="0 0 64 60">
+  <g id="PAS-small" transform="translate(0.404 -0.295)">
+    <rect id="Rectangle_94" data-name="Rectangle 94" width="0.922" height="28.352" transform="translate(17.5 12.133) rotate(-90)" fill="#a1e2db"/>
+    <rect id="Rectangle_91" data-name="Rectangle 91" height="36" transform="translate(5.596 19.295)" fill="#a1e2db"/>
+    <rect id="Rectangle_98" data-name="Rectangle 98" width="1" height="22" transform="translate(48.596 18.295)" fill="#a1e2db"/>
+    <rect id="Rectangle_95" data-name="Rectangle 95" width="0.922" height="27.254" transform="translate(18.598 50.71) rotate(-90)" fill="#a1e2db"/>
+    <rect id="Rectangle_99" data-name="Rectangle 99" width="0.922" height="27.254" transform="translate(18.598 57.165) rotate(-90)" fill="#a1e2db"/>
+    <rect id="Rectangle_92" data-name="Rectangle 92" width="1" height="22" transform="translate(9.596 19.295)" fill="#acc738"/>
+    <rect id="Rectangle_97" data-name="Rectangle 97" width="1" height="22" transform="translate(59.596 19.295)" fill="#acc738"/>
+    <path id="Path_268" data-name="Path 268" d="M0,0H.922V37.565H0Z" transform="translate(18.031 7.237) rotate(-90)" fill="#acc738"/>
+    <rect id="Rectangle_96" data-name="Rectangle 96" width="0.922" height="27.254" transform="translate(18.598 43.842) rotate(-90)" fill="#acc738"/>
+    <g id="Group_20" data-name="Group 20" transform="translate(44.233 40.456)">
+      <rect id="Rectangle_84" data-name="Rectangle 84" width="19" height="20" transform="translate(0.362 -0.161)" fill="#15c348"/>
+      <rect id="Rectangle_101" data-name="Rectangle 101" width="2" height="6" transform="translate(13.362 13.839)" fill="#fff"/>
+      <rect id="Rectangle_102" data-name="Rectangle 102" width="2" height="6" transform="translate(10.362 13.839)" fill="#fff"/>
+      <rect id="Rectangle_110" data-name="Rectangle 110" width="10" height="20" transform="translate(9.362 -0.161)" fill="rgba(57,57,57,0.25)"/>
+    </g>
+    <g id="Group_21" data-name="Group 21" transform="translate(-0.404 0.295)">
+      <rect id="Rectangle_81" data-name="Rectangle 81" width="19" height="19" fill="#004d79"/>
+      <rect id="Rectangle_88" data-name="Rectangle 88" width="2" height="2" transform="translate(1 2)" fill="#fff"/>
+      <rect id="Rectangle_89" data-name="Rectangle 89" width="2" height="2" transform="translate(4 2)" fill="#fff"/>
+      <rect id="Rectangle_90" data-name="Rectangle 90" width="2" height="2" transform="translate(7 2)" fill="#fff"/>
+      <rect id="Rectangle_108" data-name="Rectangle 108" width="9" height="19" transform="translate(10)" fill="rgba(62,62,62,0.38)"/>
+    </g>
+    <g id="Group_22" data-name="Group 22" transform="translate(44.233 0.295)">
+      <rect id="Rectangle_85" data-name="Rectangle 85" width="8" height="19" transform="translate(11.362)" fill="#95bcca"/>
+      <rect id="Rectangle_83" data-name="Rectangle 83" width="8" height="19" transform="translate(0.362)" fill="#a1d0e2"/>
+      <rect id="Rectangle_109" data-name="Rectangle 109" width="3" height="19" transform="translate(5.362)" fill="rgba(96,96,96,0.18)"/>
+    </g>
+    <g id="Group_23" data-name="Group 23" transform="translate(-0.404 40.456)">
+      <rect id="Rectangle_82" data-name="Rectangle 82" width="20" height="6" transform="translate(0 -0.161)" fill="#0075a3"/>
+      <rect id="Rectangle_111" data-name="Rectangle 111" width="10" height="6" transform="translate(10 -0.161)" fill="rgba(88,88,88,0.37)"/>
+      <rect id="Rectangle_86" data-name="Rectangle 86" width="20" height="5" transform="translate(0 13.839)" fill="#0075a3"/>
+      <rect id="Rectangle_113" data-name="Rectangle 113" width="10" height="5" transform="translate(10 13.839)" fill="#216b88"/>
+      <rect id="Rectangle_87" data-name="Rectangle 87" width="20" height="6" transform="translate(0 6.839)" fill="#0075a3"/>
+      <rect id="Rectangle_112" data-name="Rectangle 112" width="10" height="6" transform="translate(10 6.839)" fill="#216b88"/>
+    </g>
+  </g>
+</svg>
