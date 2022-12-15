@@ -1,0 +1,515 @@
+<html>
+    <head>
+        <link rel="icon" type="image/png" href="assets/favicon.png">
+        <link href="fairdata-docs.css" rel="stylesheet">
+        <link rel="stylesheet"
+            href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>
+        <title>Documentation for Fairdata UI components and guidelines</title>
+        <script type="text/javascript">
+            hljs.initHighlightingOnLoad();
+            function toggleNotification() {
+                var notification = document.getElementById("notificationBanner");
+                var display = notification.style.display === "flex" ? 'none' : 'flex';
+                var buttonText = display === "flex" ? 'Hide notification' : 'Show notification';
+                notification.style.display = display;
+                document.getElementById("toggleNotification").innerHTML = buttonText;
+            }
+        </script>
+    </head>
+    <body>
+        <div class="root">
+            <div class="fd-header container-fluid">
+                <div class="row no-gutter">
+                    <div class="col-md-10 col-sm-10 col-10">
+                        <img src="assets/fairdata-logo.svg" alt="Fairdata logo" class="logo">
+                    </div>
+                </div>
+            </div>
+            <div class="fd-content container">
+                <h1>Fairdata UI components and style guidelines joo</h1>
+                @@include('./components/_partial.html')
+                <hr />
+                <p>This document defines components and style guides to be used in Fairdata services.</p>
+                <p>This component library is not tested together with any other common UI framework. Styles should not be colliding, but make sure that everything works properly if include some other stylings.</p>
+                <p>Components are written in <a href="https://sass-lang.com/">SCSS</a>. This project includes the <a href="https://getbootstrap.com/docs/4.0/layout/grid/">Bootstrap grid system</a>, no other external styles or JavaScript are involved in this project.
+                As there is no jQuery or other Javascript involved in the components, any interactions, for example dismissable alerts needs to be implemented in the project utilizing the components.</p>
+                <a class="title" name="usage" href="#usage"><h2>Usage</h2></a>
+                <hr />
+                <p>To use predefined components, import builded css file and add required classes to your components. See available components bellow.</p>
+                <a class="title" name="usage-html" href="#usage-html"><h3>Plain HTML</h3></a>
+                <p>
+                    Add contents of <code>dist/</code> folder to root of your web server and add following inside <code>head</code> tag:
+                    <pre><code lang="html">
+        &lt;link href="/css/fairdata.css" rel="stylesheet"&gt;
+                    </code></pre>
+                    <div class="fd-alert fd-primary">CSS blob can be served from other directory as well, fonts are expected to be in <code>fonts/</code> subfolder, in same level to <code>fairdata.css</code>.</div>
+                    <p>Your folder structure should look something like:</p>
+                    <pre><code class="plaintext">
+    │   ...
+    │   fairdata.css
+    │   ...
+    └───fonts
+        │   Lato-Bold.ttf
+        │   Lato-Regular.ttf
+                </code></pre>
+                </p>
+                <a class="title" name="usage-react" href="#usage-react"><h3>React</h3></a>
+                <p>
+                    Add fairdata ui as dependency:
+                    <pre><code>
+    npm install TODO --save
+                    </code></pre>
+                    Import styles in your root component:
+                    <pre><code lang="javascript">
+    import 'node_modules/blahblah/fairdata.css'
+                    </code></pre>
+                </p>
+                <a class="title" name="usage-vue" href="#usage-vue"><h3>Vue.js</h3></a>
+                <p>
+                    Add fairdata ui as dependency:
+                    <pre><code>
+    npm install TODO --save
+                    </code></pre>
+                    TODO
+                </p>
+                <a class="title" name="development" href="#development"><h2>Development</h2></a>
+                <p>
+                    If you want to customize the styles, it can be done by using a development server with <a href="https://gulpjs.com/">Gulp.js</a> and <a herf="https://www.browsersync.io/">Browsersync</a>. Development server provides this documentation page, where all the components are present.
+                    Gulp automatically compiles the SCSS, injects styles and hot reloads documentation page when changes detected. Gulp provides also a task to build and copy necessary files for production use.
+                </p>
+                <p>Start customizing the styles with:</p>
+                <a class="title" name="development-docker" href="#development-docker"><h3>Docker</h3></a>
+                <p>If you have Docker installed you can just build the image and start local development server by:</p>
+                <pre><code>
+    docker build -t fairdata-ui .
+    docker run -p 3000:3000 -v ${PWD}:/code --name fairdata-ui --rm fairdata-ui
+                </code></pre>
+                <p>Now you should have the documentation running on <a href="http://localhost:3000">http://localhost:3000</a></p>
+                <p>With Docker you can create the bundled css by (when development server running):</p>
+                <pre><code>
+    docker run -v ${PWD}:/code --rm fairdata-ui npm run build
+                </code></pre>
+
+                <a class="title" name="development-nondocker" href="#development-nondocker"><h3>Without Docker</h3></a>
+                <p>Development workflow requires nodejs (v12 or later) and npm to be installed on your development machine. Install requirements and start local development server by:</p>
+    <pre><code class="bash">
+    npm install
+    npm start
+    </code></pre>
+                <p>Now you should have the documentation running on <a href="http://localhost:3000">http://localhost:3000</a></p>
+                <p>A compiled version of styles can be done with <code>npm run build</code>.</p>
+                <a class="title" name="components" href="#components"><h2>Components</h2></a>
+                <hr />
+                <a class="title" name="components-alerts" href="#components-alerts"><h3>Alerts</h3></a>
+                <p>Alerts can be used with any length of text and alerts can contain also links. Dismissable alerts are not available.
+                    Bellow is listed all implemented variations:</p>
+                <div class="example-container">
+                    <div class="items">
+                        <div class="fd-alert fd-primary">This is a primary alert!</div>
+                        <div class="fd-alert fd-success">This is a success alert!</div>
+                        <div class="fd-alert fd-danger">This is a danger alert! <a href="#">Alerts can contain also links.</a></div>
+                    </div>
+                    <pre>
+                        <code class="html">
+    &lt;div class="fd-alert fd-primary"&gt;This is a primary alert!&lt;/div&gt;
+    &lt;div class="fd-alert fd-danger"&gt;This is a success alert!&lt;/div&gt;
+    &lt;div class="fd-alert fd-danger"&gt;This is a danger alert! &lt;a href="#"&gt;Alerts can contain also links.&lt;/a&gt; &lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+                <a class="title" name="components-buttons" href="#components-buttons"><h3>Buttons</h3></a>
+                <p>
+                    Fairdata component library defines some predefined button styles:
+                </p>
+                <div class="example-container">
+                    <p>Regular buttons:</p>
+                    <div class="items">
+                        <button class="fd-button fd-primary">Success</button>
+                        <button class="fd-button fd-success">Success</button>
+                        <button class="fd-button fd-danger">Danger</button>
+                        <button class="fd-button fd-success fd-disabled">Disabled</button>
+                    </div>
+                    <pre><code class="html">
+    &lt;button class="fd-button fd-primary"&gt;fd-primary&lt;/button&gt;
+    &lt;button class="fd-button fd-success"&gt;fd-success&lt;/button&gt;
+    &lt;button class="fd-button fd-danger"&gt;fd-danger&lt;/button&gt;
+    &lt;button class="fd-button fd-success disabled"&gt;Disabled&lt;/button&gt;
+                    </code></pre>
+                    <p>All variations can be used as outline button with <code>fd-outline-</code> class prefix:</p>
+                    <div class="items">
+                        <button class="fd-button fd-outline-primary">Success</button>
+                        <button class="fd-button fd-outline-success">Success</button>
+                        <button class="fd-button fd-outline-danger">Danger</button>
+                        <button class="fd-button fd-outline-success fd-disabled">Disabled</button>
+                    </div>
+                    <pre><code class="html">
+    &lt;button class="fd-button fd-outline-primary"&gt;Primary&lt;/button&gt;
+    &lt;button class="fd-button fd-outline-success"&gt;Success&lt;/button&gt;
+    &lt;button class="fd-button fd-outline-danger"&gt;Danger&lt;/button&gt;
+    &lt;button class="fd-button fd-outline-success fd-disabled"&gt;Disabled&lt;/button&gt;
+                    </code></pre>
+                    <p>A button can be disabled by adding <code>fd-disabled</code> class to it.<br>
+                        Padding can be increased by adding <code>fd-large</code> class to ay button</p>
+                    <div class="items">
+                        <button class="fd-button fd-success fd-large">Success large</button>
+                    </div>
+                    <pre><code class="html">
+    &lt;button class="fd-button fd-success large"&gt;Success large&lt;/button&gt;
+                    </code></pre>
+                </div>
+                <a class="title" name="components-card" href="#components-card"><h3>Card</h3></a>
+                <p>
+                    Card implements a simple container for content. Card can include a title and any length of content.<br>
+                    Additional actions can be included to a card. Actions should contain one or more buttons. The buttons inside actions container will be adjusted properly for small screen width.
+                </p>
+                <div class="example-container">
+                    <div class="items">
+                        <div class="fd-card">
+                            <h1>Card title</h1>
+                            <hr>
+                            <p>This is a cool card. Bellow is some actions:</p>
+                            <div class="actions">
+                                <button type="button" class="fd-button fd-outline-success">Action 1</button>
+                                <button type="button" class="fd-button fd-danger">Action 2</button>
+                            </div>
+                        </div>
+                    </div>
+                    <pre><code class="html">
+    &lt;div class="fd-card"&gt;
+        &lt;h1&gt;Card title&lt;/h1&gt;
+        &lt;hr&gt;
+        &lt;p&gt;This is a cool card. Bellow is some actions:&lt;/p&gt;
+        &lt;div class="actions"&gt;
+            &lt;button type="button" class="fd-button fd-outline-success"&gt;Action 1&lt;/button&gt;
+            &lt;button type="button" class="fd-button fd-danger"&gt;Action 2&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+                        </code>
+                    </pre>
+                </div>
+                <div class="example-container">
+                    <div class="items">
+                        <div class="fd-card">
+                            <h1>Logout</h1>
+                            <hr>
+                            <p>This will end the active session for <strong>ALL</strong> Fairdata Services, not only for IDA</p>
+                            <div class="actions">
+                                <button type="button" class="fd-button fd-success">Cancel</button>
+                                <button type="button" class="fd-button fd-outline-success">Logout</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="title" name="components-content" href="#components-content"><h3>Content</h3></a>
+                <p>Content of the page should be put inside of container. This container has specified max widths for different screen sizes and can be used as a container for grid system.</p>
+                <div class="example-container">
+                    <p>Add your content:</p>
+                    <pre><code class="html">
+    &lt;div class="fd-content container"&gt;
+        &lt;p&gt;Page content here&lt;/p&gt;
+    &lt;/div&gt;
+                    </code></pre>
+                </div>
+                <a class="title" name="components-footer" href="#components-footer"><h3>Footer</h3></a>
+                <p>Fairdata component library defines a sample footer to be used in Fairdata services. An example of footer can be found in the end of this documentation page. Footer is designed to fold properly across all screen widths.</p>
+                <p>Footer should be placed in the end of page. For layout to work properly footer, header and container should be inside an element with <code>display: flex;</code> and <code>flex-direction: column;</code>, as well with width and height of 100% related to the body.</p>
+                <p>Footer styles can be used independently from other Fairdata styles. Note that footer requires to have Bootstrap grid system, which is not included in the standalone verion of footer styles.
+                Footer styles can be included form <code>dist/footer.css</code> and can be built with <code>npm run gulp -- sass-footer</code></p>
+                <p class="fd-alert fd-primary"> Official translations for footer texts are defined bellow and should be used if context is localized</p>
+
+                <div class="example-container">
+                    <strong>English:</strong>
+                    <p>FAIRDATA</p>
+                    <p>The Fairdata services are offered by the <strong>Ministry of Education and Culture</strong> and produced by<strong> CSC – IT Center for Science Ltd.</strong></p>
+                    <p>INFORMATION</p>
+                    <p><a href="https://www.fairdata.fi/en/terms-and-policies/" target="_blank">Terms and Policies</a></p>
+                    <p><a href="https://www.fairdata.fi/en/contracts-and-privacy/" target="_blank">Contracts and Privacy</a></p>
+                    <p>ACCESSIBILITY</p>
+                    <p><a href="https://www.fairdata.fi/en/accessibility/" target="_blank">Accessibility statement</a></p>
+                    <p>CONTACT</p>
+                    <p><a href="mailto:servicedesk@csc.fi">servicedesk@csc.fi</a></p>
+                    <p>FOLLOW</p>
+                    <p><a href="https://twitter.com/Fairdata_fi" target="_blank">Twitter</a></p>
+                    <p><a href="https://www.fairdata.fi/en/news/" target="_blank">What's new</a></p>
+                    <br>
+                    <br>
+                    <strong>Finnish:</strong>
+                    <p>FAIRDATA</p>
+                    <p>Fairdata-palvelut järjestää <strong>opetus- ja kulttuuriministeriö </strong> ja toimittaa <strong>CSC – Tieteen tietotekniikan keskus Oy</strong></p>
+                    <p>TIETOA</p>
+                    <p><a href="https://www.fairdata.fi/kayttopolitiikat-ja-ehdot/" target="_blank">Käyttöpolitiikat ja ehdot</a></p>
+                    <p><a href="https://www.fairdata.fi/sopimukset/" target="_blank">Sopimukset ja tietosuoja</a></p>
+                    <p>SAAVUTETTAVUUS</p>
+                    <p><a href="https://www.fairdata.fi/saavutettavuus/" target="_blank">Saavutettavuus</a></p>
+                    <p>OTA YHTEYTTÄ</p>
+                    <p><a href="mailto:servicedesk@csc.fi">servicedesk@csc.fi</a></p>
+                    <p>SEURAA</p>
+                    <p><a href="https://twitter.com/Fairdata_fi" target="_blank">Twitter</a></p>
+                    <p><a href="https://www.fairdata.fi/ajankohtaista/" target="_blank">Uutiset</a></p>
+                    <br>
+                    <br>
+                    <strong>Swedish:</strong>
+                    <p>FAIRDATA</p>
+                    <p>Fairdata-tjänsterna erbjuds av <strong>ministeriet för utbildning och kultur</strong> och produceras av <strong>CSC - IT Center for Science Ltd.</strong></p>
+                    <p>INFORMATION</p>
+                    <p><a href="https://www.fairdata.fi/en/terms-and-policies/" target="_blank">Villkor och policyer</a></p>
+                    <p><a href="https://www.fairdata.fi/en/contracts-and-privacy/" target="_blank">Kontrakt och integritet</a></p>
+                    <p>TILLGÄNGLIGHET</p>
+                    <p><a href="https://www.fairdata.fi/en/accessibility/" target="_blank">Tillgänglighet uttalande</a></p>
+                    <p>KONTAKT</p>
+                    <p><a href="mailto:servicedesk@csc.fi">servicedesk@csc.fi</a></p>
+                    <p>FÖLJ</p>
+                    <p><a href="https://twitter.com/Fairdata_fi" target="_blank">Twitter</a></p>
+                    <p><a href="https://www.fairdata.fi/en/news/" target="_blank">Nyheter</a></p>
+                </div>
+
+                <div class="example-container">
+                    <p class="fd-alert fd-primary">If you prefer to use a four column footer instead of five columns, you need to update the column widths. The sum of widths and offsets should be equal to 12 on every breakpoint.</p>
+                    <pre><code class="html">
+    &lt;div class="fd-footer container-fluid"&gt;
+        &lt;div class="row no-gutters"&gt;
+            &lt;div class="col col-lg-4 col-md-12 col-sm-12 col-12"&gt;
+                &lt;span&gt;Fairdata&lt;/span&gt;
+                &lt;p&gt;
+                    The Fairdata services are offered by the &lt;strong&gt;Ministry of Education and Culture&lt;/strong&gt; and produced by&lt;strong&gt; CSC – IT Center for Science Ltd.&lt;/strong&gt;
+                &lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="col padding-right col-lg-2 col-md-3 col-sm-6 offset-lg-1"&gt;
+                &lt;span&gt;Information&lt;/span&gt;
+                &lt;p&gt;&lt;a href="https://www.fairdata.fi/en/terms-and-policies/" target="_blank"&gt;Terms and Policies&lt;/a&gt;&lt;/p&gt;
+                &lt;p&gt;&lt;a href="https://www.fairdata.fi/en/contracts-and-privacy/" target="_blank"&gt;Contracts and Privacy&lt;/a&gt;&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="col padding-right col-lg-2 col-md-3 col-sm-6 col-6"&gt;
+                &lt;span&gt;Accessibility&lt;/span&gt;
+                &lt;p&gt;&lt;a href="https://www.fairdata.fi/en/accessibility/" target="_blank"&gt;Accessibility statement&lt;/a&gt;&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="col col-lg-2 col-md-3 col-sm-6 col-6"&gt;
+                &lt;span&gt;Contact&lt;/span&gt;
+                &lt;p&gt;&lt;a href="mailto:servicedesk@csc.fi"&gt;servicedesk@csc.fi&lt;/a&gt;&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="col col-lg-1 col-md-3 col-sm-6 col-6"&gt;
+                &lt;span&gt;Follow&lt;/span&gt;
+                &lt;p&gt;&lt;a href="https://twitter.com/Fairdata_fi" target="_blank"&gt;Twitter&lt;/a&gt;&lt;/p&gt;
+                &lt;p&gt;&lt;a href="https://www.fairdata.fi/en/news/" target="_blank"&gt;What's new&lt;/a&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+                    </code></pre>
+                </div>
+                <a class="title" name="components-header" href="#components-header"><h3>Header</h3></a>
+                <p>Header should be placed in the start of page. For layout to work properly header, footer and container should be contained inside an element with <code>display: flex;</code> and <code>flex-direction: column;</code>, as well with width and height of 100% related to the body.</p>
+                <div class="example-container">
+                    <p>A basic header with logo can be added with:</p>
+                    <pre><code lang="html">
+    &lt;div class="fd-header container-fluid"&gt;
+        &lt;div class="row no-gutter"&gt;
+            &lt;div class="col-md-10 col-sm-10 col-10"&gt;
+                &lt;img src="fairdata-logo.svg" alt="Fairdata logo" class="logo"&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+                    </code></pre>
+                    <p>Add pre-styled language selectors by adding following after the first column in header:</p>
+                    <pre><code lang="html">
+    &lt;div class="col-md-2 col-sm-2 col-2 language-selector-wrapper"&gt;
+        &lt;div class="language-selector-container"&gt;
+            &lt;span class="language-choice" role="button" tabindex="0"&gt;fi&lt;/span&gt;
+            &lt;span class="language-choice" role="button" tabindex="0"&gt;sv&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+                    </code></pre>
+                </div>
+                <a class="title" name="layout" href="#layout"><h2>Layout</h2></a>
+                <p>A basic Fairdata layout can be achieved with the <a href="#components-header">header</a>, <a href="#components-footer">footer</a> and content components:</p>
+                <div class="example-container">
+                    <pre><code lang="html">
+    &lt;body&gt;
+        &lt;div class="fd-header container-fluid"&gt;
+            ...
+        &lt;/div&gt;
+        &lt;div class="fd-content container"&gt;
+            &lt;p&gt;Page content here&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="fd-footer container-fluid"&gt;
+            ...
+        &lt;/div&gt;
+    &lt;/body&gt;
+                    </code></pre>
+                </div>
+                <a class="title" name="components-cookies" href="#components-cookies"><h3>Cookies notification</h3></a>
+                <p>A notification about cookies can be included to the page. Please refer to Fairdata SSO for including the notification on your page.
+                    This repository contains only styles for the notification.<br>
+                    Notification styles are available on <code>dist/notification.css</code> and can be used independently from other Fairdata styles.
+                    Notification styles can be updated by running <code>npm run gulp -- sass-notification</code>
+                </p>
+
+                <div class="example-container" style="text-align: center; justify-content: center">
+                    <p>Toggle the sample cookies notification:</p>
+                    <p><button class="fd-button fd-outline-primary" onclick="toggleNotification();" id="toggleNotification">Show notification</button></p>
+                </div>
+
+                <div class="example-container">
+                    <strong>English:</strong>
+                    <p>The Fairdata services use cookies and tracking to ensure security and quality.</p>
+                    <p><a href="https://www.fairdata.fi/en/contracts-and-privacy/" target="_blank">View the Fairdata Privacy Policy.</a></p>
+                    <br><br>
+                    <strong>Finnish:</strong>
+                    <p>Fairdata-palvelut käyttävät evästeitä ja seurantaa turvallisuuden ja laadun varmistamiseksi.</p>
+                    <p><a href="https://www.fairdata.fi/sopimukset/" target="_blank">Katso Fairdatan tietosuojakäytäntö</a></p>
+                    <br><br>
+                    <strong>Swedish:</strong>
+                    <p>Fairdata-tjänsterna använder cookies och spårning för att säkerställa säkerhet och kvalitet.</p>
+                    <p><a href="https://www.fairdata.fi/en/contracts-and-privacy/" target="_blank">Se Fairdata sekretesspolicy (på engelska)</a></p>
+                </div>
+
+                <a class="title" name="logos" href="#logos"><h2>Logos</h2></a>
+                <hr />
+                <p>Fairdata component library includes logos in various resolutions for each Fairdata service and for essential external services and organizations, to be used in all services utilizing the common Fairdata styles.</p>
+                <div class="example-container ">
+                    <table width="100%" cellpadding="20px" style="text-align: center">
+                        <tr>
+                            <td width="50%"><img width="200px" src="assets/tree_300px.png" alt="Fairdata tree logo"></td>
+                            <td width="50%"><img width="200px" src="assets/fairdata_300px.png" alt="Fairdata logo"></td>
+                        </tr>
+                        <tr>
+                            <td width="50%"><img width="200px" src="assets/ida_300px.png" alt="IDA logo"></td>
+                            <td width="50%"><img width="200px" src="assets/metax_300px.png" alt="Metax logo"></td>
+                        </tr>
+                        <tr>
+                            <td width="50%"><img width="200px" src="assets/qvain_300px.png" alt="Qvain logo"></td>
+                            <td width="50%"><img width="200px" src="assets/etsin_300px.png" alt="Etsin logo"></td>
+                        </tr>
+                        <tr>
+                            <td width="50%"><img width="200px" src="assets/pas_300px.png" alt="PAS logo"></td>
+                            <td width="50%"><img width="200px" src="assets/avaa_300px.png" alt="AVAA logo"></td>
+                        </tr>
+                        <tr>
+                            <td width="50%"><img width="150px" src="assets/csc_300px.png" alt="CSC logo"></td>
+                            <td width="50%"><img width="150px" src="assets/haka_300px.png" alt="Haka logo"></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <a class="title" name="diagrams" href="#diagrams"><h2>Diagrams</h2></a>
+                <hr />
+                <div style="padding-top: 50px; padding-bottom: 50px">
+                    <img width="100%" src="assets/how-fairdata.svg" alt="Fairdata: How">
+                </div>
+                <div style="padding-top: 100px;">
+                    <img width="100%" src="assets/miten-fairdata.svg" alt="Fairdata: Miten">
+                </div>
+
+                <a class="title" name="favicon" href="#favicon"><h2>Favicon</h2></a>
+                <hr />
+                <p>Fairdata component library includes a favicon to be used in all services utilizing the common Fairdata styles.</p>
+                <div class="example-container" style="text-align: center">
+                    <img width="100px" src="assets/favicon.png" alt="Fairdata favicon">
+                </div>
+
+                <a class="title" name="colors" href="#colors"><h2>Colors</h2></a>
+                <hr />
+                <p>Colors and different variations used in Fairdata styles are listed bellow:</p>
+                <div class="example-container" style="text-align: center; justify-content: center">
+                    <p>Primary colors</p>
+                    <div class="colors-container" style="text-align: center; justify-content: center">
+                        <div class="color fd-primary" onclick="window.getSelection().selectAllChildren(this);">#0075a3</div>
+                        <div class="color fd-success" onclick="window.getSelection().selectAllChildren(this);">#03881C</div>
+                        <div class="color fd-danger" onclick="window.getSelection().selectAllChildren(this);">#B70C00</div>
+                    </div>
+                    <p>Light variations</p>
+                    <div class="colors-container" style="text-align: center; justify-content: center">
+                        <div class="color fd-primary-light" onclick="window.getSelection().selectAllChildren(this);">#e9f8ff</div>
+                        <div class="color fd-success-light" onclick="window.getSelection().selectAllChildren(this);">#fafffb</div>
+                        <div class="color fd-danger-light" onclick="window.getSelection().selectAllChildren(this);">#FDEFEF</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fd-footer container-fluid">
+                <div class="row no-gutters">
+                    <div class="col col-lg-4 col-md-12 col-sm-12 col-12">
+                        <span>Fairdata</span>
+                        <p>
+                            The Fairdata services are offered by the <strong>Ministry of Education and Culture</strong> and produced by <strong>CSC – IT Center for Science Ltd.</strong>
+                        </p>
+                    </div>
+                    <div class="col padding-right col-lg-2 col-md-3 col-sm-6 offset-lg-1">
+                        <span>Information</span>
+                        <p><a href="https://www.fairdata.fi/en/terms-and-policies/" target="_blank">Terms and Policies</a></p>
+                        <p><a href="https://www.fairdata.fi/en/contracts-and-privacy/" target="_blank">Contracts and Privacy</a></p>
+                    </div>
+                    <div class="col padding-right col-lg-2 col-md-3 col-sm-6 col-6">
+                        <span>Accessibility</span>
+                        <p><a href="https://www.fairdata.fi/en/accessibility/" target="_blank">Accessibility statement</a></p>
+                    </div>
+                    <div class="col col-lg-2 col-md-3 col-sm-6 col-6">
+                        <span>Contact</span>
+                        <p><a href="mailto:servicedesk@csc.fi">servicedesk@csc.fi</a></p>
+                    </div>
+                    <div class="col col-lg-1 col-md-3 col-sm-6 col-6">
+                        <span>Follow</span>
+                        <p><a href="https://twitter.com/Fairdata_fi">Twitter</a></p>
+                        <p><a href="https://www.fairdata.fi/en/news/" target="_blank">What's new</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="notification-banner" id="notificationBanner">
+                <div class="text-content">
+                    <p>The Fairdata services use cookies and tracking to ensure security and quality.<br>
+                    <a href="https://www.fairdata.fi/en/contracts-and-privacy/" target="_blank">View the Fairdata Privacy Policy.</a></p>
+                </div>
+                <div class="actions" id="actionsContainer">
+                    <svg id="closeDefault" data-name="Component 3 – 4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 28 28">
+                        <defs>
+                          <style>
+                            .cls-1, .cls-3 {
+                              fill: none;
+                            }
+
+                            .cls-1 {
+                              stroke: #000;
+                            }
+
+                            .cls-2 {
+                              stroke: none;
+                            }
+                          </style>
+                        </defs>
+                        <g id="Ellipse_1" data-name="Ellipse 1" class="cls-1">
+                          <circle class="cls-2" cx="14" cy="14" r="14"/>
+                          <circle class="cls-3" cx="14" cy="14" r="13.5"/>
+                        </g>
+                        <image id="cancel" width="12" height="12" transform="translate(8 8)" xlink:href="data:image/png;base64,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"/>
+                      </svg>
+                      <svg id="closeHover" data-name="Component 3 – 4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 28 28">
+                        <defs>
+                          <style>
+                            .cls-1-1 {
+                              fill: #03881c;
+                            }
+                          </style>
+                        </defs>
+                        <circle id="Ellipse_1" data-name="Ellipse 1" class="cls-1-1" cx="14" cy="14" r="14"/>
+                        <image id="cancel_2.02.07_PM" data-name="cancel 2.02.07 PM" width="12" height="12" transform="translate(8 8)" xlink:href="data:image/png;base64,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"/>
+                      </svg>
+                </div>
+            </div>
+            <script>
+                var actions = document.getElementById("actionsContainer");
+                var closeDefault = document.getElementById("closeDefault");
+                var closeHover = document.getElementById("closeHover");
+
+                actions.addEventListener("mouseover", function() {
+                    closeDefault.style.opacity = 0;
+                    closeHover.style.opacity = 1;
+                });
+                actions.addEventListener("mouseout", function() {
+                    closeDefault.style.opacity = 1;
+                    closeHover.style.opacity = 0;
+                })
+
+            </script>
+        </div>
+    </body>
+</html>
