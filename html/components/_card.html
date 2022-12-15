@@ -1,0 +1,55 @@
+<a class="title" name="components-card" href="#components-card"
+  ><h3>Card</h3></a
+>
+<p>
+  Card implements a simple container for content. Card can include a title and
+  any length of content.<br />
+  Additional actions can be included to a card. Actions should contain one or
+  more buttons. The buttons inside actions container will be adjusted properly
+  for small screen width.
+</p>
+<div class="example-container">
+  <div class="items">
+    <div class="fd-card">
+      <h1>Card title</h1>
+      <hr />
+      <p>This is a cool card. Bellow is some actions:</p>
+      <div class="actions">
+        <button type="button" class="fd-button fd-outline-success">
+          Action 1
+        </button>
+        <button type="button" class="fd-button fd-danger">Action 2</button>
+      </div>
+    </div>
+  </div>
+  <pre><code class="html">
+&lt;div class="fd-card"&gt;
+&lt;h1&gt;Card title&lt;/h1&gt;
+&lt;hr&gt;
+&lt;p&gt;This is a cool card. Bellow is some actions:&lt;/p&gt;
+&lt;div class="actions"&gt;
+  &lt;button type="button" class="fd-button fd-outline-success"&gt;Action 1&lt;/button&gt;
+  &lt;button type="button" class="fd-button fd-danger"&gt;Action 2&lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+              </code>
+          </pre>
+</div>
+<div class="example-container">
+  <div class="items">
+    <div class="fd-card">
+      <h1>Logout</h1>
+      <hr />
+      <p>
+        This will end the active session for
+        <strong>ALL</strong> Fairdata Services, not only for IDA
+      </p>
+      <div class="actions">
+        <button type="button" class="fd-button fd-success">Cancel</button>
+        <button type="button" class="fd-button fd-outline-success">
+          Logout
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

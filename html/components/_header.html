@@ -1,0 +1,33 @@
+<a class="title" name="components-header" href="#components-header"
+  ><h3>Header</h3></a
+>
+<p>
+  Header should be placed in the start of page. For layout to work properly
+  header, footer and container should be contained inside an element with
+  <code>display: flex;</code> and <code>flex-direction: column;</code>, as well
+  with width and height of 100% related to the body.
+</p>
+<div class="example-container">
+  <p>A basic header with logo can be added with:</p>
+  <pre><code lang="html">
+&lt;div class="fd-header container-fluid"&gt;
+&lt;div class="row no-gutter"&gt;
+  &lt;div class="col-md-10 col-sm-10 col-10"&gt;
+      &lt;img src="fairdata-logo.svg" alt="Fairdata logo" class="logo"&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+          </code></pre>
+  <p>
+    Add pre-styled language selectors by adding following after the first column
+    in header:
+  </p>
+  <pre><code lang="html">
+&lt;div class="col-md-2 col-sm-2 col-2 language-selector-wrapper"&gt;
+&lt;div class="language-selector-container"&gt;
+  &lt;span class="language-choice" role="button" tabindex="0"&gt;fi&lt;/span&gt;
+  &lt;span class="language-choice" role="button" tabindex="0"&gt;sv&lt;/span&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+          </code></pre>
+</div>

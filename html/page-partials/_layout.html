@@ -1,0 +1,85 @@
+<a class="title" name="layout" href="#layout"><h2>Layout</h2></a>
+<p>
+  A basic Fairdata layout can be achieved with the
+  <a href="#components-header">header</a>,
+  <a href="#components-footer">footer</a> and content components:
+</p>
+<div class="example-container">
+  <pre><code lang="html">
+    &lt;body&gt;
+        &lt;div class="fd-header container-fluid"&gt;
+            ...
+        &lt;/div&gt;
+        &lt;div class="fd-content container"&gt;
+            &lt;p&gt;Page content here&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="fd-footer container-fluid"&gt;
+            ...
+        &lt;/div&gt;
+    &lt;/body&gt;
+                    </code></pre>
+</div>
+<a class="title" name="components-cookies" href="#components-cookies"
+  ><h3>Cookies notification</h3></a
+>
+<p>
+  A notification about cookies can be included to the page. Please refer to
+  Fairdata SSO for including the notification on your page. This repository
+  contains only styles for the notification.<br />
+  Notification styles are available on
+  <code>dist/notification.css</code> and can be used independently from other
+  Fairdata styles. Notification styles can be updated by running
+  <code>npm run gulp -- sass-notification</code>
+</p>
+
+<div
+  class="example-container"
+  style="text-align: center; justify-content: center"
+>
+  <p>Toggle the sample cookies notification:</p>
+  <p>
+    <button
+      class="fd-button fd-outline-primary"
+      onclick="toggleNotification();"
+      id="toggleNotification"
+    >
+      Show notification
+    </button>
+    @@include('../components/_cookie-notification.html')
+  </p>
+</div>
+
+<div class="example-container">
+  <strong>English:</strong>
+  <p>
+    The Fairdata services use cookies and tracking to ensure security and
+    quality.
+  </p>
+  <p>
+    <a href="https://www.fairdata.fi/en/contracts-and-privacy/" target="_blank"
+      >View the Fairdata Privacy Policy.</a
+    >
+  </p>
+  <br /><br />
+  <strong>Finnish:</strong>
+  <p>
+    Fairdata-palvelut käyttävät evästeitä ja seurantaa turvallisuuden ja laadun
+    varmistamiseksi.
+  </p>
+  <p>
+    <a href="https://www.fairdata.fi/sopimukset/" target="_blank"
+      >Katso Fairdatan tietosuojakäytäntö</a
+    >
+  </p>
+  <br /><br />
+  <strong>Swedish:</strong>
+  <p>
+    Fairdata-tjänsterna använder cookies och spårning för att säkerställa
+    säkerhet och kvalitet.
+  </p>
+  <p>
+    <a href="https://www.fairdata.fi/en/contracts-and-privacy/" target="_blank"
+      >Se Fairdata sekretesspolicy (på engelska)</a
+    >
+  </p>
+</div>
