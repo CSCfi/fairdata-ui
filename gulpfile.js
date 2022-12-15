@@ -11,7 +11,7 @@ function reload(done) {
     done();
 }
 
-// Tee taski, joka kokoaa file includet ja kopioi ne ./docs alle
+// Combine html partials and components
 gulp.task('html-build', gulp.series(function() {
     return gulp.src("./html/index.html")
         .pipe(fileinclude({
