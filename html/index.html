@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link href="fairdata-docs.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css"
+    />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>
+    <title>Documentation for Fairdata UI components and guidelines</title>
+    <script type="text/javascript">
+      hljs.initHighlightingOnLoad();
+      function toggleNotification() {
+        var notification = document.getElementById("notificationBanner");
+        var display = notification.style.display === "flex" ? "none" : "flex";
+        var buttonText =
+          display === "flex" ? "Hide notification" : "Show notification";
+        notification.style.display = display;
+        document.getElementById("toggleNotification").innerHTML = buttonText;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="root">
+      @@include('./page-partials/_header.html')
+
+      <div class="fd-content container">
+        <h1>Fairdata UI components and style guidelines</h1>
+        <p>
+          This document defines components and style guides to be used in
+          Fairdata services.
+        </p>
+        <p>
+          This component library is not tested together with any other common UI
+          framework. Styles should not be colliding, but make sure that
+          everything works properly if include some other stylings.
+        </p>
+        <p>
+          Components are written in <a href="https://sass-lang.com/">SCSS</a>.
+          This project includes the
+          <a href="https://getbootstrap.com/docs/4.0/layout/grid/"
+            >Bootstrap grid system</a
+          >, no other external styles or JavaScript are involved in this
+          project. As there is no jQuery or other Javascript involved in the
+          components, any interactions, for example dismissable alerts needs to
+          be implemented in the project utilizing the components.
+        </p>
+
+        @@include('./page-partials/_usage.html')
+        @@include('./page-partials/_development.html')
+        @@include('./page-partials/_components.html')
+        @@include('./page-partials/_layout.html')
+        @@include('./page-partials/_logos.html')
+        @@include('./page-partials/_diagrams.html')
+        @@include('./page-partials/_favicon.html')
+        @@include('./page-partials/_colors.html')
+        @@include('./page-partials/_footer.html')
+      </div>
+    </div>
+    <script>
+      var actions = document.getElementById("actionsContainer");
+      var closeDefault = document.getElementById("closeDefault");
+      var closeHover = document.getElementById("closeHover");
+
+      actions.addEventListener("mouseover", function () {
+        closeDefault.style.opacity = 0;
+        closeHover.style.opacity = 1;
+      });
+      actions.addEventListener("mouseout", function () {
+        closeDefault.style.opacity = 1;
+        closeHover.style.opacity = 0;
+      });
+    </script>
+  </body>
+</html>

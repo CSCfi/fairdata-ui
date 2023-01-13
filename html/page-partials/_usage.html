@@ -1,0 +1,50 @@
+<h2><a class="title" name="usage" href="#usage">Usage</a></h2>
+<hr />
+<p>
+  To use predefined components, import builded css file and add required classes
+  to your components. See available components bellow.
+</p>
+<h3><a class="title" name="usage-html" href="#usage-html">Plain HTML</a></h3>
+<p>
+  Add contents of <code>dist/</code> folder to root of your web server and add following inside <code>head</code> tag:
+</p>
+<pre>
+  <code lang="html">
+    &lt;link href="/css/fairdata.css" rel="stylesheet"&gt;
+  </code>
+</pre>
+<div class="fd-alert fd-primary">
+  CSS blob can be served from other directory as well, fonts are expected to be in <code>fonts/</code>
+  subfolder, in same level to <code>fairdata.css</code>.
+</div>
+<p>Your folder structure should look something like:</p>
+<pre>
+  <code class="plaintext">
+    │   ...
+    │   fairdata.css
+    │   ...
+    └───fonts
+        │   Lato-Bold.ttf
+        │   Lato-Regular.ttf
+  </code>
+</pre>
+<h3><a class="title" name="usage-react" href="#usage-react">React</a></h3>
+<p>Add fairdata ui as dependency:</p>
+<pre>
+  <code>
+    npm install TODO --save
+  </code>
+</pre>
+Import styles in your root component:
+<pre>
+  <code lang="javascript">
+    import 'node_modules/blahblah/fairdata.css'
+  </code>
+</pre>
+<h3><a class="title" name="usage-vue" href="#usage-vue">Vue.js</a></h3>
+<p>Add fairdata ui as dependency:</p>
+<pre>
+  <code>
+    npm install TODO --save
+  </code>
+</pre>
