@@ -15,6 +15,3 @@ project.sublime-project
 node_modules/
 build/
 tmp/
-
-# don't copy docs/index.html. There is a gulp task for that 
-docs/index.html
