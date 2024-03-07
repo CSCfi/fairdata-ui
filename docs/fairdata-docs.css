@@ -4342,6 +4342,21 @@ hr {
     }
 }
 
+.fd-footer {
+    position: relative;
+}
+
+.fd-footer .col-lg-4 {
+    position: relative;
+}
+
+.fd-footer .logo {
+    width: 175px;
+    position: absolute;
+    top: 5;
+    right: 0;
+}
+
 .fd-footer a {
     color: #595959;
     text-decoration: none
@@ -4350,6 +4365,7 @@ hr {
 .fd-footer a:hover {
     text-decoration: underline
 }
+
 .fd-footer img:hover {
     outline: 1px solid #0076a3
 }

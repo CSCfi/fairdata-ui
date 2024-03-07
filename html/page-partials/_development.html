@@ -20,8 +20,9 @@
 </p>
 <pre><code>
 docker build -t fairdata-ui .
-docker run -p 3000:3000 -v ${PWD}:/code --name fairdata-ui --rm fairdata-ui
-          </code></pre>
+docker run -v "$(pwd)":/code --name fairdata-ui --rm fairdata-ui npm install
+docker run -d -p 3000:3000 -v "$(pwd)":/code --name fairdata-ui --rm fairdata-ui
+</code></pre>
 <p>
   Now you should have the documentation running on
   <a class="fd-link fd-link-content" href="http://localhost:3000">http://localhost:3000</a>
@@ -31,9 +32,8 @@ docker run -p 3000:3000 -v ${PWD}:/code --name fairdata-ui --rm fairdata-ui
   running):
 </p>
 <pre><code>
-docker run -v ${PWD}:/code --rm fairdata-ui npm run build
-          </code></pre>
-
+docker run -v "$(pwd)":/code  --rm fairdata-ui npm run build
+</code></pre>
 <h3>
   <a class="title" name="development-nondocker" href="#development-nondocker">Without Docker</a>
 </h3>

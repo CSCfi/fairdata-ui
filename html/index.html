@@ -23,7 +23,6 @@
   <body>
     <div class="root">
       @@include('./page-partials/_header.html')
-
       <div class="fd-content container">
         <h1>Fairdata UI components and style guidelines</h1>
         <p>
@@ -45,7 +44,6 @@
           components, any interactions, for example dismissable alerts needs to
           be implemented in the project utilizing the components.
         </p>
-
         @@include('./page-partials/_usage.html')
         @@include('./page-partials/_development.html')
         @@include('./page-partials/_components.html')
@@ -54,14 +52,13 @@
         @@include('./page-partials/_diagrams.html')
         @@include('./page-partials/_favicon.html')
         @@include('./page-partials/_colors.html')
-        @@include('./page-partials/_footer.html')
       </div>
+      @@include('./page-partials/_footer.html')
     </div>
     <script>
       var actions = document.getElementById("actionsContainer");
       var closeDefault = document.getElementById("closeDefault");
       var closeHover = document.getElementById("closeHover");
-
       actions.addEventListener("mouseover", function () {
         closeDefault.style.opacity = 0;
         closeHover.style.opacity = 1;

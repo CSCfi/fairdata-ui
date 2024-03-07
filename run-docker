@@ -4,4 +4,5 @@ ROOT=`dirname "$0"`
 cd $ROOT
 
 docker build -t fairdata-ui .
-docker run -p 3000:3000 -v ${PWD}:/code --name fairdata-ui --rm fairdata-ui
+docker run -v "$(pwd)":/code --name fairdata-ui --rm fairdata-ui npm install
+docker run -d -p 3000:3000 -v "$(pwd)":/code --name fairdata-ui --rm fairdata-ui

@@ -1,10 +1,11 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync');
-var sass= require('gulp-sass');
+var sass = require('gulp-sass')(require('node-sass'));
 var concat = require('gulp-concat');
 var cleanCSS = require('gulp-clean-css');
 var fileinclude = require('gulp-file-include');
 var port = process.env.SERVER_PORT || 3000
+
 
 function reload(done) {
     browserSync.reload();

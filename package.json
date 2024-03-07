@@ -19,16 +19,16 @@
   },
   "homepage": "https://cscfi.github.io/fairdata-ui/",
   "devDependencies": {
-    "browser-sync": "^2.26.12",
-    "gulp": "^4.0.2",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-file-include": "^2.3.0",
-    "gulp-sass": "^4.1.0",
-    "node-sass": "^4.14.1"
+    "browser-sync": "latest",
+    "gulp": "latest",
+    "gulp-clean-css": "latest",
+    "gulp-concat": "latest",
+    "gulp-file-include": "latest",
+    "gulp-sass": "latest",
+    "node-sass": "latest"
   },
   "dependencies": {
-    "bootstrap": "^4.5.0"
+    "bootstrap": "latest"
   },
   "files": [
     "dist/{css,fonts}/*.{css,ttf}",
